@@ -7,7 +7,7 @@ const BrideGroom = () => {
         <div className="bride-groom-container">
             <div className="bride-groom">
                 <h3 className="bride-name">Bride</h3>
-                <a className="instagram-link" href="https://www.instagram.com/one_pro_entertainment" target="_blank" rel="noopener noreferrer">
+                <a className="instagram-link" href="https://www.instagram.com/onepro_organizer_entertain" target="_blank" rel="noopener noreferrer">
                     <i className="fa fa-instagram"></i> Instagram
                 </a>
                 <img src={brideImage} alt="Bride" />
@@ -16,7 +16,7 @@ const BrideGroom = () => {
             </div>
             <div className="bride-groom">
                 <h3 className="groom-name">Groom</h3>
-                <a className="instagram-link" href="https://www.instagram.com/one_pro_entertainment" target="_blank" rel="noopener noreferrer">
+                <a className="instagram-link" href="https://www.instagram.com/onepro_organizer_entertain" target="_blank" rel="noopener noreferrer">
                     <i className="fa fa-instagram"></i> Instagram
                 </a>
                 <img src={groomImage} alt="Groom" />
