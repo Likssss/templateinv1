@@ -1,0 +1,356 @@
+@font-face {
+    font-family: 'RetroSignature';
+    src: url('../fonts/RetroSignature.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ElaineKinandhita';
+    src: url('../fonts/ElaineKinandhita.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;  /* Ensure there's no horizontal overflow */
+    scroll-behavior: smooth;  /* Enable smooth scrolling */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;  /* Enable vertical scrolling only */
+}
+
+.front-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;  /* Ensure content stays within the container */
+}
+
+.front-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);  /* Add a dark overlay */
+    z-index: 1;
+}
+
+.slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Maintain aspect ratio */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.wedding-title {
+    font-size: 1.2em;
+    font-family: 'ElaineKinandhita';
+    position: absolute;
+    top: 43%;
+    left: 50px;
+    color: white;
+    background-color: transparent;
+    text-align: left;
+    transform: translateY(-50%);
+    z-index: 2;  /* Ensure it appears above the overlay */
+}
+
+.couple-names {
+    font-size: 6em;
+    font-family: 'RetroSignature';  /* Apply the custom font */
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    margin: 0;
+    z-index: 2;  /* Ensure it appears above the overlay */
+}
+
+.invitation-container {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;  /* Ensure it appears above the overlay */
+}
+
+.invitation-text {
+    margin: 10px 0;
+    z-index: 2;  /* Ensure it appears above the overlay */
+}
+
+.save-the-date {
+    font-size: 1em;
+    color: #939292;  /* Same color as countdown values */
+    position: absolute;
+    bottom: 130px;
+    left: 50px;
+    z-index: 2;  /* Ensure it appears above the overlay */
+}
+
+.countdown-timer {
+    font-size: 1.2em;
+    position: absolute;
+    bottom: 100px;
+    left: 50px;
+    z-index: 2;  /* Ensure it appears above the overlay */
+}
+
+.invitation-button {
+    display: inline-block;
+    position: absolute;
+    top: 60%;
+    left: 50px;
+    transform: translateY(-50%);
+    margin: 20px 0;
+    padding: 15px 40px;
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: 1em;
+    z-index: 2;  /* Ensure it appears above the overlay */
+}
+
+.invitation-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);  /* Slightly visible background on hover */
+}
+
+.contact-info {
+    margin-top: 10px;
+    font-size: 1em;
+    z-index: 2;  /* Ensure it appears above the overlay */
+}
+
+.bride-groom-section {
+    padding: 100px 0 50px 0;
+    text-align: center;
+    background-color: #FEFAF0;
+    color: #333;
+    position: relative;
+    margin-top: 0;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 5%;  /* Add spacing from the left border */
+    right: 5%;  /* Add spacing from the right border */
+    background-color: transparent;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;  /* Distribute space evenly */
+    align-items: center;
+    padding: 10px 0;
+    transition: top 0.3s;
+    overflow-x: hidden;  /* Prevent horizontal overflow */
+    box-sizing: border-box;  /* Include padding and border in the element's total width and height */
+    width: 90%;  /* Ensure the navbar fits within the container */
+    border-bottom: 1px solid #333;  /* Re-add border effect */
+}
+
+.navbar-item {
+    flex: 1;  /* Ensure equal width for each item */
+    display: flex;
+    justify-content: center;
+}
+
+.nav-item {
+    color: #121211;  /* Change text color */
+    text-decoration: none;
+    padding: 10px 20px;
+    font-family: 'ElaineKinandhita';
+    font-size: 1.2em;
+    transition: border-bottom 0.3s, color 0.3s;
+    text-align: center;  /* Center-align the text */
+    white-space: nowrap;  /* Prevent items from wrapping */
+}
+
+.nav-item:hover {
+    color: #121211;
+    border-bottom: 2px solid #121211;  /* Underline effect on hover */
+}
+
+.nav-item.selected {
+    color: #F2DBAB;  /* Change text color to white for the selected item */
+    background-color: #595C52;  /* Background color for the selected page */
+    border-radius: 5px;  /* Add border radius to the selected background */
+    padding: 5px 15px;  /* Add padding to make the selected background visible */
+}
+
+.bride-groom-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.bride-groom {
+    text-align: center;
+    margin: 20px;
+}
+
+.bride-name, .groom-name {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family: 'ElaineKinandhita';
+}
+
+.instagram-link {
+    display: block;
+    margin-bottom: 40px;
+    color: #333;
+    text-decoration: none;
+}
+
+.bride-groom img {
+    border-radius: 5px;
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.bride-role, .groom-role {
+    margin-top: 30px;
+    font-size: 1em;
+    color: #333;
+}
+
+.parent-names {
+    margin-top: 30px;
+    font-size: 1.5em !important;
+    font-family: 'ElaineKinandhita';
+    color: #666;
+}
+
+.bride-groom p {
+    font-size: 0.9em;
+}
+
+.footer {
+    background-color: #FEFAF0; /* Background color of the footer */
+    color: #121211; /* Text color in the footer */
+    text-align: left; /* Align text to the left */
+    padding: 10px 50px 50px 50px; /* Adjust padding to add space below */
+    font-family: 'ElaineKinandhita', sans-serif; /* Use the custom font */
+    font-size: 1em; /* Make the text smaller */
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 10px;
+    right: -10px;
+    background-color: transparent;
+    border: none;  /* No border */
+    z-index: 10;  /* Ensure it is above other elements */
+    transition: opacity 0.3s;  /* Smooth transition for opacity */
+}
+
+#back-to-top:hover {
+    opacity: 0.8;  /* Slightly reduce opacity on hover */
+}
+
+.back-to-top-image {
+    width: 100px;  /* Adjust width */
+    height: 200px;  /* Adjust height */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        left: 5%;
+        right: 5%;
+        padding: 10px 0;
+    }
+
+    .nav-item {
+        padding: 5px 10px;
+        font-size: 1em;
+    }
+
+    .bride-groom-container {
+        flex-direction: column;
+    }
+
+    .bride-groom img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        left: 5%;
+        right: 5%;
+        padding: 5px 0;
+    }
+
+    .nav-item {
+        padding: 5px 8px;
+        font-size: 0.9em;
+    }
+
+    .bride-groom img {
+        width: 100%;
+        width: auto;
+        height: auto;
+        object-fit: cover;
+    }
+    
+    .footer {
+        background-color: #FEFAF0; /* Background color of the footer */
+        color: #121211; /* Text color in the footer */
+        text-align: left; /* Align text to the left */
+        padding: 10px 50px 50px 50px; /* Adjust padding to add space below */
+        font-family: 'ElaineKinandhita', sans-serif; /* Use the custom font */
+        font-size: 1em; /* Make the text smaller */
+    }
+    
+    .footer a {
+        color: #121211; /* Link color */
+        text-decoration: none; /* Remove underline from links */
+    }
+    
+    .footer a:hover {
+        text-decoration: underline; /* Add underline on hover */
+    }
+}    
