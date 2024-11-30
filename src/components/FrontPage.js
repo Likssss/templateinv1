@@ -101,7 +101,7 @@ const FrontPage = () => {
                     <img src={backgroundImage4} alt="Slide 4" className="slide" />
                 </div>
                 <h1 className="wedding-title">The Wedding</h1>
-                <h2 className="couple-names">Darren & Jun</h2>
+                <h2 className="couple-names">Groom & Bride</h2>
                 <p className="save-the-date">Save the Date</p>
                 <div className="countdown-timer">
                     <CountdownTimer targetDate={new Date(weddingDate)} />
