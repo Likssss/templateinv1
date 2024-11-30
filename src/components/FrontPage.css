@@ -267,9 +267,7 @@ body {
 }
 
 .footer {
-    background-color: #FEFAF0; /* Background color of the footer */
-    color: #121211; /* Text color in the footer */
-    text-align: left; /* Align text to the left */
+    background-color: #FEFAF0;
     padding: 10px 50px 50px 50px; /* Adjust padding to add space below */
     font-family: 'ElaineKinandhita', sans-serif; /* Use the custom font */
     font-size: 1em; /* Make the text smaller */
@@ -278,11 +276,12 @@ body {
 #back-to-top {
     position: fixed;
     bottom: 10px;
-    right: -10px;
+    right: 10px;  /* Adjust for mobile */
     background-color: transparent;
     border: none;  /* No border */
     z-index: 10;  /* Ensure it is above other elements */
     transition: opacity 0.3s;  /* Smooth transition for opacity */
+    outline: none;  /* Remove focus outline */
 }
 
 #back-to-top:hover {
@@ -290,8 +289,8 @@ body {
 }
 
 .back-to-top-image {
-    width: 100px;  /* Adjust width */
-    height: 200px;  /* Adjust height */
+    width: 50px;  /* Adjust width for mobile */
+    height: 50px;  /* Adjust height for mobile */
 }
 
 /* Responsive Design */
@@ -340,9 +339,9 @@ body {
         background-color: #FEFAF0; /* Background color of the footer */
         color: #121211; /* Text color in the footer */
         text-align: left; /* Align text to the left */
-        padding: 10px 50px 50px 50px; /* Adjust padding to add space below */
+        padding: 10px 20px; /* Adjust padding to add space below */
         font-family: 'ElaineKinandhita', sans-serif; /* Use the custom font */
-        font-size: 1em; /* Make the text smaller */
+        font-size: 0.8em; /* Adjust font size for mobile */
     }
     
     .footer a {
@@ -353,4 +352,68 @@ body {
     .footer a:hover {
         text-decoration: underline; /* Add underline on hover */
     }
-}    
+
+    .wedding-title {
+        font-size: 0.9em; /* Further adjust for small screens */
+        left: 10px; /* Adjust position for small screens */
+    }
+
+    .couple-names {
+        font-size: 1.5em; /* Further adjust for small screens */
+        left: 10px; /* Adjust position for small screens */
+    }
+
+    .save-the-date {
+        font-size: 0.7em; /* Further adjust for small screens */
+        bottom: 80px; /* Adjust position for small screens */
+    }
+
+    .countdown-timer {
+        font-size: 0.9em; /* Further adjust for small screens */
+        bottom: 70px; /* Adjust position for small screens */
+    }
+
+    .invitation-button {
+        font-size: 0.7em; /* Further adjust for small screens */
+        padding: 6px 15px; /* Further adjust padding for small screens */
+        top: 70%; /* Adjust position for small screens */
+    }
+
+    .contact-info {
+        font-size: 0.7em; /* Further adjust font size for small screens */
+    }
+
+    .navbar-item {
+        padding: 3px; /* Further adjust padding for small screens */
+    }
+
+    .nav-item {
+        font-size: 0.8em; /* Further adjust font size for small screens */
+        padding: 3px; /* Further adjust padding for small screens */
+    }
+
+    .bride-groom {
+        margin: 3px; /* Further adjust margin for small screens */
+    }
+
+    .bride-name, .groom-name {
+        margin: 8px 0; /* Further adjust margin for small screens */
+        font-size: 0.9em; /* Further adjust font size for small screens */
+    }
+
+    .instagram-link {
+        margin-bottom: 8px; /* Further adjust margin for small screens */
+    }
+
+    .bride-role, .groom-role {
+        margin-top: 8px; /* Further adjust margin for small screens */
+    }
+
+    .parent-names {
+        font-size: 0.8em; /* Further adjust font size for small screens */
+    }
+
+    .bride-groom p {
+        font-size: 0.6em; /* Further adjust font size for small screens */
+    }
+}
