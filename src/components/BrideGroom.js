@@ -6,8 +6,8 @@ const BrideGroom = () => {
     return (
         <div className="bride-groom-container">
             <div className="bride-groom">
-                <h3 className="bride-name">Darren Tan</h3>
-                <a className="instagram-link" href="https://www.instagram.com/darrentan" target="_blank" rel="noopener noreferrer">
+                <h3 className="bride-name">Bride</h3>
+                <a className="instagram-link" href="https://www.instagram.com/one_pro_entertainment" target="_blank" rel="noopener noreferrer">
                     <i className="fa fa-instagram"></i> Instagram
                 </a>
                 <img src={brideImage} alt="Bride" />
@@ -15,8 +15,8 @@ const BrideGroom = () => {
                 <p className="parent-names">John &<br />Jane Doe</p>
             </div>
             <div className="bride-groom">
-                <h3 className="groom-name">Ijunwen</h3>
-                <a className="instagram-link" href="https://www.instagram.com/ijunwen" target="_blank" rel="noopener noreferrer">
+                <h3 className="groom-name">Groom</h3>
+                <a className="instagram-link" href="https://www.instagram.com/one_pro_entertainment" target="_blank" rel="noopener noreferrer">
                     <i className="fa fa-instagram"></i> Instagram
                 </a>
                 <img src={groomImage} alt="Groom" />
