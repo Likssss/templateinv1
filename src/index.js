@@ -1,11 +1,15 @@
+// index.js
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
+import './index.css';
 import App from './App';
-import './styles.css';
+import reportWebVitals from './reportWebVitals';
 
-// Get the root element
-const rootElement = document.getElementById('root');
-// Create a root using ReactDOM.createRoot
-const root = ReactDOM.createRoot(rootElement);
-// Render the App component inside the root
-root.render(<App />);
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+reportWebVitals();
