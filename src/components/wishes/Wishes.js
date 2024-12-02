@@ -7,7 +7,7 @@ const Wishes = () => {
     const [name, setName] = useState('');
     const [message, setMessage] = useState('');
 
-    const BASE_URL = 'https://templatewed1.vercel.app/api';
+    const BASE_URL = 'https://templateapi.vercel.app/api';
 
     // Load wishes from the server when the component mounts
     useEffect(() => {
