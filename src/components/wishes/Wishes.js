@@ -9,7 +9,7 @@ const Wishes = () => {
 
     // Load wishes from the server when the component mounts
     useEffect(() => {
-        axios.get(`https://templateapi.vercel.app/api/getWishes`)
+        axios.get(`https://tempalteapi.vercel.app/api/getWishes`)
             .then(response => {
                 const data = response.data.split('\n').filter(wish => wish);
                 const formattedWishes = data.map(entry => {
