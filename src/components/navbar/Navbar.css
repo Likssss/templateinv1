@@ -1,0 +1,46 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 50%; /* Center the navbar */
+    transform: translateX(-50%); /* Ensure the navbar stays centered */
+    width: 900px; /* Fixed width for the navbar */
+    background-color: transparent;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;  /* Distribute space evenly */
+    align-items: center;
+    padding: 10px 0;
+    transition: top 0.3s;
+    overflow-x: hidden;  /* Prevent horizontal overflow */
+    box-sizing: border-box;  /* Include padding and border in the element's total width and height */
+    border-bottom: 1px solid #333;  /* Re-add border effect */
+}
+
+.navbar-item {
+    flex: 1;  /* Ensure equal width for each item */
+    display: flex;
+    justify-content: center;
+}
+
+.nav-item {
+    color: #121211;  /* Change text color */
+    text-decoration: none;
+    padding: 10px 20px;
+    font-family: 'ElaineKinandhita';
+    font-size: 1.2em;
+    transition: border-bottom 0.3s, color 0.3s;
+    text-align: center;  /* Center-align the text */
+    white-space: nowrap;  /* Prevent items from wrapping */
+}
+
+.nav-item:hover {
+    color: #121211;
+    border-bottom: 2px solid #121211;  /* Underline effect on hover */
+}
+
+.nav-item.selected {
+    color: #F2DBAB;  /* Change text color to white for the selected item */
+    background-color: #595C52;  /* Background color for the selected page */
+    border-radius: 5px;  /* Add border radius to the selected background */
+    padding: 5px 15px;  /* Add padding to make the selected background visible */
+}

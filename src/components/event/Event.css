@@ -1,0 +1,141 @@
+/* Event Section Styles */
+.event-section {
+    background-color: #FEFAF0; /* Background color for event section */
+    padding: 50px 20px; /* Padding for the section */
+    text-align: center;
+}
+
+.event-title-container {
+    max-width: 780px; /* Match the max width of event details */
+    margin: 0 auto 30px auto; /* Center the container and add space below */
+    text-align: left; /* Align text to the left */
+}
+
+.event-title {
+    font-family: 'ElaineKinandhita';
+    font-size: 2em;
+    color: #333;
+    margin: 0; /* Remove default margin */
+}
+
+.event-detail {
+    font-family: 'ElaineKinandhita';
+    font-size: 1.2em;
+    color: #666;
+    margin-top: 40px; /* Space above the detail text */
+}
+
+.event-details {
+    display: flex;
+    justify-content: center; /* Center the event items */
+    flex-wrap: wrap;
+    max-width: 850px; /* Max width for the container */
+    margin: 0 auto; /* Center the container */
+}
+
+.event-item {
+    padding: 20px;
+    margin: 10px;
+    text-align: left;
+    width: 100%; /* Default to full width */
+}
+
+.event-item h3 {
+    font-family: 'ElaineKinandhita';
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px; /* Add margin below the headings */
+}
+
+.event-item p {
+    font-size: 1em;
+    color: #666;
+    margin: 5px 0 15px 0; /* Add margin below the paragraphs */
+}
+
+.button-container {
+    padding-top: 15px; /* Add padding to create space above the buttons */
+}
+
+.view-map-button, .save-date-button {
+    display: block; /* Position buttons vertically */
+    width: 100%; /* Full width on mobile */
+    height: 55px;
+    padding: 10px 20px;
+    margin-bottom: 10px; /* Margin between the buttons */
+    border: none;
+    border-radius: 5px;
+    background-color: #F2DBAB;
+    color: #121211;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-left: auto; /* Center the buttons */
+    margin-right: auto; /* Center the buttons */
+}
+
+.view-map-button:last-of-type, .save-date-button:last-of-type {
+    margin-bottom: 0; /* Remove bottom margin for the last button */
+}
+
+.view-map-button:hover, .save-date-button:hover {
+    background-color: #C3A57A;
+    color: white;
+}
+
+.event-number {
+    font-family: 'ElaineKinandhita';
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 5px; /* Space between number and event title */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .event-title {
+        font-size: 1.5em; /* Adjust font size for smaller screens */
+    }
+
+    .event-detail {
+        font-size: 1em; /* Adjust font size for smaller screens */
+        margin-top: 20px; /* Adjust margin for smaller screens */
+    }
+
+    .event-item {
+        width: 100%; /* Full width for each item */
+        padding: 10px; /* Adjust padding */
+        margin: 5px 0; /* Adjust margin */
+    }
+
+    .view-map-button, .save-date-button {
+        width: 100%; /* Slightly narrower buttons */
+        margin-bottom: 15px; /* Adjust margin between buttons */
+    }
+
+    .event-title-container {
+        max-width: 685px; /* Match the max width of event details */
+        margin: 0 auto 30px auto; /* Center the container and add space below */
+        text-align: left; /* Align text to the left */
+    }
+}
+
+@media (max-width: 480px) {
+    .event-title {
+        font-size: 1.2em; /* Further adjust font size for small screens */
+    }
+
+    .event-detail {
+        font-size: 0.9em; /* Further adjust font size for small screens */
+    }
+
+    .view-map-button, .save-date-button {
+        width: 100%; /* Full width for buttons */
+        font-size: 0.8em; /* Adjust font size for buttons */
+        padding: 8px 15px; /* Adjust padding */
+    }
+
+    .event-title-container {
+        max-width: 220px; /* Match the max width of event details */
+        margin: 0 auto 30px auto; /* Center the container and add space below */
+        text-align: left; /* Align text to the left */
+    }
+}

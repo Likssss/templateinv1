@@ -1,0 +1,155 @@
+.gallery-section {
+    background-color: #FEFAF0; /* Background color for gallery section */
+    padding: 50px 20px; /* Padding for the section */
+    text-align: center;
+}
+
+.gallery-title {
+    font-family: 'ElaineKinandhita';
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between gallery items */
+    max-width: 880px; /* Max width for the container matching the navbar */
+    margin: 0 auto; /* Center the container */
+}
+
+.gallery-item {
+    flex: 1 1 calc(33.333% - 40px); /* Three items per row with space between */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    max-width: 280px; /* Set a fixed max width to keep images consistent */
+    max-height: 280px; /* Set a fixed max height to keep images consistent */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth animation */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05); /* Slightly increase size */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+}
+
+.video-item {
+    width: 100%;
+    max-width: 900px; /* Ensure the video does not exceed the container width */
+    height: 0;
+    padding-bottom: 56.25%; /* Maintain 16:9 aspect ratio */
+    position: relative;
+}
+
+.video-item iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+/* Overlay Styles */
+.overlay {
+    position: fixed; /* Fix the overlay to cover the entire screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure the overlay is on top of other elements */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.carousel {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-image {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.carousel-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2em;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10000; /* Ensure the close button is above the carousel */
+}
+
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10000; /* Ensure the nav buttons are above the carousel */
+}
+
+.carousel-nav.left {
+    left: 20px;
+}
+
+.carousel-nav.right {
+    right: 20px;
+}
+
+/* Other existing styles... */
+
+.carousel-image {
+    width: 100%; /* Maintain aspect ratio */
+    height: 100%; /* Maintain aspect ratio */
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    object-fit: contain; /* Ensure the image fits within the container */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery-item {
+        flex: 1 1 calc(50% - 20px); /* Two items per row for tablet screens */
+    }
+
+    .video-item {
+        max-width: 582px; /* Use full width for responsive design */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item {
+        flex: 1 1 100%; /* One item per row for mobile screens */
+    }
+
+    .video-item {
+        max-width: 100%; /* Use full width for responsive design */
+    }
+}

@@ -1,0 +1,22 @@
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;  /* Add some spacing between elements */
+}
+
+.number {
+    font-size: 1.6em;  /* Larger size for numbers */
+    margin-right: -5px;  /* Add some space between numbers and their corresponding values */
+    color: #E5E5E5;  /* Gentle shade of white */
+}
+
+.value {
+    font-size: 1em;  /* Normal size for values */
+    margin-right: 5px;  /* Add spacing between values */
+    color: #939292;  /* Soft shade of grey */
+}
+
+.countdown span {
+    display: inline-block;
+}

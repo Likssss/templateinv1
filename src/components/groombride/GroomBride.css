@@ -1,0 +1,60 @@
+.bride-groom-section {
+    padding: 100px 0 50px 0;
+    text-align: center;
+    background-color: #FEFAF0;
+    color: #333;
+    position: relative;
+    margin-top: 0;
+}
+
+.bride-groom-container {
+    max-width: 850px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.bride-groom {
+    text-align: center;
+    margin: 20px;
+}
+
+.bride-name, .groom-name {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family: 'ElaineKinandhita';
+}
+
+.instagram-link {
+    display: block;
+    margin-bottom: 40px;
+    color: #333;
+    text-decoration: none;
+}
+
+.bride-groom img {
+    border-radius: 5px;
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.bride-role, .groom-role {
+    margin-top: 30px;
+    font-size: 1em;
+    color: #333;
+}
+
+.parent-names {
+    margin-top: 30px;
+    font-size: 1.5em !important;
+    font-family: 'ElaineKinandhita';
+    color: #666;
+}
+
+.bride-groom p {
+    font-size: 0.9em;
+}

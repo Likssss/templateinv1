@@ -1,0 +1,106 @@
+.wishes-section {
+    background-color: #FEFAF0; /* Background color for wishes section */
+    padding: 50px 20px; /* Padding for the section */
+    text-align: center;
+}
+
+.wishes-title {
+    font-family: 'ElaineKinandhita';
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.wishes-description {
+    font-family: 'ElaineKinandhita';
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+.wishes-form-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.wishes-form {
+    flex: 1;
+    max-width: 400px;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.wishes-form label {
+    font-family: 'ElaineKinandhita';
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.wishes-form input,
+.wishes-form textarea {
+    font-family: 'ElaineKinandhita';
+    font-size: 1em;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.wishes-form button {
+    font-family: 'ElaineKinandhita';
+    font-size: 1em;
+    color: white;
+    background-color: #333;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.wishes-form button:hover {
+    background-color: #555;
+}
+
+.wishes-list-container {
+    flex: 1;
+    max-width: 400px;
+    margin: 0 20px;
+    height: 400px; /* Set a fixed height for the container */
+    overflow-y: auto; /* Add vertical scroll */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.wishes-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.wish-item {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.wish-item h4 {
+    font-family: 'ElaineKinandhita';
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.wish-item p {
+    font-family: 'ElaineKinandhita';
+    font-size: 1em;
+    color: #666;
+}
