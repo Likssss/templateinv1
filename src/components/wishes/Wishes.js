@@ -33,7 +33,7 @@ const Wishes = () => {
             setMessage('');
 
             try {
-                await axios.post(`https://templateapi.vercel.app/api/saveWish`, { name, message });
+                await axios.post(`https://tempalteapi.vercel.app/api/saveWish`, { name, message });
             } catch (error) {
                 console.error('Error saving wish to server:', error);
             }
