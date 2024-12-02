@@ -7,11 +7,9 @@ const Wishes = () => {
     const [name, setName] = useState('');
     const [message, setMessage] = useState('');
 
-    const BASE_URL = 'https://templateapi.vercel.app/api';
-
     // Load wishes from the server when the component mounts
     useEffect(() => {
-        axios.get(`${BASE_URL}/getWishes`)
+        axios.get(`https://templateapi.vercel.app/api/getWishes`)
             .then(response => {
                 const data = response.data.split('\n').filter(wish => wish);
                 const formattedWishes = data.map(entry => {
@@ -35,7 +33,7 @@ const Wishes = () => {
             setMessage('');
 
             try {
-                await axios.post(`${BASE_URL}/saveWish`, { name, message });
+                await axios.post(`https://templateapi.vercel.app/api/saveWish`, { name, message });
             } catch (error) {
                 console.error('Error saving wish to server:', error);
             }
