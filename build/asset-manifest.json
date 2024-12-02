@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "./static/css/main.e62541d8.css",
+    "main.js": "./static/js/main.28007454.js",
+    "static/js/453.9606274e.chunk.js": "./static/js/453.9606274e.chunk.js",
+    "static/media/groom.jpg": "./static/media/groom.845f0691b9f02a665293.jpg",
+    "static/media/bride.jpg": "./static/media/bride.e1ea4b86ac0b9ead9c6e.jpg",
+    "static/media/gallery6.jpg": "./static/media/gallery6.e26a17a13122db619a54.jpg",
+    "static/media/gallery5.jpg": "./static/media/gallery5.5e96a5a0218a9f3e45a0.jpg",
+    "static/media/img4.jpg": "./static/media/img4.5e96a5a0218a9f3e45a0.jpg",
+    "static/media/gallery4.jpg": "./static/media/gallery4.97fa724f9babfefe1112.jpg",
+    "static/media/img3.jpg": "./static/media/img3.97fa724f9babfefe1112.jpg",
+    "static/media/gallery1.jpg": "./static/media/gallery1.0fb5a68f1f44fb1c0d2d.jpg",
+    "static/media/img1.jpg": "./static/media/img1.0fb5a68f1f44fb1c0d2d.jpg",
+    "static/media/ElaineKinandhita.ttf": "./static/media/ElaineKinandhita.5b4f2cd556aa20f28bf6.ttf",
+    "static/media/RetroSignature.otf": "./static/media/RetroSignature.cd05795478e2494be0a9.otf",
+    "static/media/bca.png": "./static/media/bca.8dfc007198806cba4904.png",
+    "static/media/gallery2.jpg": "./static/media/gallery2.64395ee70766b08d406d.jpg",
+    "static/media/img2.jpg": "./static/media/img2.64395ee70766b08d406d.jpg",
+    "static/media/bni.png": "./static/media/bni.03a6e419a8cfa8b05cb4.png",
+    "index.html": "./index.html",
+    "main.e62541d8.css.map": "./static/css/main.e62541d8.css.map",
+    "main.28007454.js.map": "./static/js/main.28007454.js.map",
+    "453.9606274e.chunk.js.map": "./static/js/453.9606274e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e62541d8.css",
+    "static/js/main.28007454.js"
+  ]
+}
