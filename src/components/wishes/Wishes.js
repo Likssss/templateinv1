@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { db } from '../firebaseConfig';
+import { collection, addDoc, getDocs } from 'firebase/firestore';
 import './Wishes.css';
 
 const Wishes = () => {
@@ -7,36 +8,24 @@ const Wishes = () => {
     const [name, setName] = useState('');
     const [message, setMessage] = useState('');
 
-    // Load wishes from the server when the component mounts
     useEffect(() => {
-        axios.get(`https://tempalteapi.vercel.app/api/getWishes`)
-            .then(response => {
-                const data = response.data.split('\n').filter(wish => wish);
-                const formattedWishes = data.map(entry => {
-                    const [namePart, messagePart] = entry.split(', Message: ');
-                    const name = namePart.replace('Name: ', '');
-                    return { name, message: messagePart };
-                });
-                setWishes(formattedWishes.reverse());  // Reverse the order to show the most recent wishes at the top
-            })
-            .catch(error => {
-                console.error('Error fetching wishes:', error);
-            });
+        const fetchData = async () => {
+            const wishesCollection = collection(db, 'wishes');
+            const wishesSnapshot = await getDocs(wishesCollection);
+            setWishes(wishesSnapshot.docs.map(doc => doc.data()).reverse());
+        };
+        fetchData();
     }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (name && message) {
             const newWish = { name, message };
-            setWishes([newWish, ...wishes]);  // Add the new wish at the top
+            setWishes([newWish, ...wishes]);
             setName('');
             setMessage('');
-
-            try {
-                await axios.post(`https://tempalteapi.vercel.app/api/saveWish`, { name, message });
-            } catch (error) {
-                console.error('Error saving wish to server:', error);
-            }
+            const wishesCollection = collection(db, 'wishes');
+            await addDoc(wishesCollection, newWish);
         }
     };
 
