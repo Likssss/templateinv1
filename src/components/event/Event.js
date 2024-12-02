@@ -23,7 +23,7 @@ const Event = () => {
     const handleSaveDate = (event) => {
         const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-        let options = ['Google', 'iCal', 'Outlook.com', 'Yahoo']; // Default options
+        let options = ['Google']; // Default options
         if (/android/i.test(userAgent)) {
             // For Android devices, prioritize Google Calendar
             options = ['Google'];
