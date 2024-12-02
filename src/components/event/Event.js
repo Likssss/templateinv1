@@ -1,36 +1,49 @@
 import React from 'react';
 import './Event.css';
+import { atcb_action } from 'add-to-calendar-button';
 
 const Event = () => {
-    const detectDeviceAndRedirect = (title, description, startTime, endTime, location) => {
+    const events = [
+        {
+            title: 'Pemberkatan',
+            description: 'Join us for the wedding ceremony',
+            startDate: '2050-11-05T08:00:00',
+            endDate: '2050-11-05T09:00:00',
+            location: 'Jakarta Cathedral, Main Street',
+        },
+        {
+            title: 'Resepsi',
+            description: 'Join us for the wedding reception',
+            startDate: '2050-11-05T10:00:00',
+            endDate: '2050-11-05T12:00:00',
+            location: 'Jakarta International Stadium (JIS)',
+        },
+    ];
+
+    const handleSaveDate = (event) => {
         const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-        const startDate = new Date(startTime).toISOString().replace(/[-:.]/g, '');
-        const endDate = new Date(endTime).toISOString().replace(/[-:.]/g, '');
-
-        const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&details=${encodeURIComponent(description)}&location=${encodeURIComponent(location)}&dates=${startDate}/${endDate}`;
-        const outlookCalendarUrl = `https://outlook.office.com/calendar/0/deeplink/compose?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(description)}&startdt=${new Date(startTime).toISOString()}&enddt=${new Date(endTime).toISOString()}&location=${encodeURIComponent(location)}`;
-
+        let options = ['Google', 'iCal', 'Outlook.com', 'Yahoo']; // Default options
         if (/android/i.test(userAgent)) {
-            // Redirect to Google Calendar for Android
-            window.open(googleCalendarUrl, '_blank');
+            // For Android devices, prioritize Google Calendar
+            options = ['Google'];
         } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-            // Redirect to Apple Calendar for iOS
-            const appleCalendarUrl = `data:text/calendar;charset=utf8,BEGIN:VCALENDAR
-VERSION:2.0
-BEGIN:VEVENT
-SUMMARY:${title}
-DESCRIPTION:${description}
-DTSTART:${startDate}
-DTEND:${endDate}
-LOCATION:${location}
-END:VEVENT
-END:VCALENDAR`;
-            window.open(appleCalendarUrl, '_blank');
-        } else {
-            // Default to Google Calendar
-            window.open(googleCalendarUrl, '_blank');
+            // For iOS devices, prioritize Apple Calendar
+            options = ['Apple'];
         }
+
+        atcb_action({
+            name: event.title,
+            description: event.description,
+            startDate: event.startDate.split('T')[0],
+            startTime: event.startDate.split('T')[1].slice(0, -3), // Remove seconds
+            endDate: event.endDate.split('T')[0], // Ensure end date is included
+            endTime: event.endDate.split('T')[1].slice(0, -3), // Remove seconds
+            location: event.location,
+            options: options,
+            timeZone: 'Asia/Jakarta', // Optional: specify time zone
+            iCalFileName: `${event.title.replace(/ /g, '_')}`,
+        });
     };
 
     return (
@@ -40,50 +53,26 @@ END:VCALENDAR`;
                 <p className="event-detail">Join us as we celebrate our union with love and joy.</p>
             </div>
             <div className="event-details">
-                <div className="event-item">
-                    <h3 className="event-number">1.</h3>
-                    <h3>Pemberkatan</h3>
-                    <p>Date: 05 November 2050</p>
-                    <p>Time: 08:00 AM</p>
-                    <p>Place: Jakarta Cathedral, Main Street</p>
-                    <div className="button-container">
-                        <button className="view-map-button" onClick={() => window.open('https://maps.google.com')}>View Map</button>
-                        <button 
-                            className="save-date-button" 
-                            onClick={() => detectDeviceAndRedirect(
-                                'Pemberkatan', 
-                                'Join us for the wedding ceremony', 
-                                '2050-11-05T08:00:00',
-                                '2050-11-05T09:00:00',
-                                'Jakarta Cathedral, Main Street'
-                            )}
-                        >
-                            Save the Date
-                        </button>
+                {events.map((event, index) => (
+                    <div className="event-item" key={index}>
+                        <h3 className="event-number">{index + 1}.</h3>
+                        <h3>{event.title}</h3>
+                        <p>Date: {new Date(event.startDate).toLocaleDateString()}</p>
+                        <p>Time: {new Date(event.startDate).toLocaleTimeString()}</p>
+                        <p>Place: {event.location}</p>
+                        <div className="button-container">
+                            <button className="view-map-button" onClick={() => window.open('https://maps.google.com')}>
+                                View Map
+                            </button>
+                            <button
+                                className="save-date-button"
+                                onClick={() => handleSaveDate(event)}
+                            >
+                                Save the Date
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <div className="event-item">
-                    <h3 className="event-number">2.</h3>
-                    <h3>Resepsi</h3>
-                    <p>Date: 05 November 2050</p>
-                    <p>Time: 10:00 AM</p>
-                    <p>Place: Jakarta International Stadium (JIS)</p>
-                    <div className="button-container">
-                        <button className="view-map-button" onClick={() => window.open('https://maps.google.com')}>View Map</button>
-                        <button 
-                            className="save-date-button" 
-                            onClick={() => detectDeviceAndRedirect(
-                                'Resepsi', 
-                                'Join us for the wedding reception', 
-                                '2050-11-05T10:00:00',
-                                '2050-11-05T12:00:00',
-                                'Jakarta International Stadium (JIS)'
-                            )}
-                        >
-                            Save the Date
-                        </button>
-                    </div>
-                </div>
+                ))}
             </div>
         </div>
     );
